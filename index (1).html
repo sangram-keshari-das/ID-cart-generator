@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student ID Card Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1 class="header">Id Card Maker</h1>
+    <div class="container">
+       
+        <div class="left-panel">
+
+            <form id="idCardForm">
+                <div class="form-group">
+                    <label for="name">Enter Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group" style="display:flex ; ">
+                    <label for="namePositionTopToBottom">Top To Bottom:</label>
+                    <input type="range" id="namePositionTopToBottom" min="0" max="100" value="50">
+                    <label for="namePositionLeftToRight">Left To Right:</label>
+                    <input type="range" id="namePositionLeftToRight" min="0" max="100" value="50">
+                </div>
+                <div class="form-group">
+                    <label for="collegeName">Enter College Name:</label>
+                    <input type="text" id="collegeName" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentId">Enter Student ID:</label>
+                    <input type="text" id="studentId" required>
+                </div>
+                <div class="form-group" style="display:flex ; ">
+                    <label for="idPositionTopToBottom">Top To Bottom:</label>
+                    <input type="range" id="idPositionTopToBottom" min="0" max="100" value="50">
+                    <label for="idPositionLeftToRight">Left To Right:</label>
+                    <input type="range" id="idPositionLeftToRight" min="0" max="100" value="50">
+                </div>
+                <div>
+                    <label for="photo">Enter Student's Photo:</label>
+                    <input type="file" id="photo" accept="image/*" required>
+                    <p id="photoName"></p>
+                </div>
+                <div class="form-group">
+                    <label for="text-color">Select Text Color:</label>
+                    <input type="color" id="text-color" name="text-color" value="#000000">
+                </div>
+                <div class="form-group">
+                    <label for="text-color">Select Background Color:</label>
+                    <input type="color" id="bg-color" name="bg-color" value="#000000">
+                </div>
+                <div class="form-group">
+                    <label for="font-family">Select Font Family:</label>
+                    <select id="font-family" name="font-family">
+                        <option value="Arial">Arial</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Helvetica">Helvetica</option>
+                       
+                    </select>
+                </div>
+                
+                <button type="submit" onclick="previewId()" id="PreviewCard">View Id Card</button>
+            </form>
+            
+        </div>
+        <button onclick="generatePDF()" id="generateCard">Download Id Card</button>
+        
+        <div class="right-panel" >
+            <div class="id-card-container" id="idCardContent" >
+                <div id="college-name"></div>
+                <div class="row-2">
+                    <div class="photo-container">
+                        <span class="photo" id="idCardPhoto"></span>
+                    </div>
+                    <div class="student-info">
+                        <ul>
+                            <li id="idCardName" style="position: relative;"></li>
+                            <li id="idCardStudentId" style="position: relative;"></li>
+                            <li id="idCardCourse" style="position: relative;"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+      
+</body>
+
+</html>
